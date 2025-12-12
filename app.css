@@ -1,0 +1,334 @@
+body {
+    background-color: #f5d9d5;
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+}
+
+span::selection {
+    color: rgb(255, 255, 255);
+}
+
+h1::selection {
+    color: rgb(255, 0, 0);
+}
+
+
+body::selection {
+    background-color: pink;
+    color: white;
+}
+
+nav {
+    max-height: 10%;
+    max-width: 100%;
+    position: fixed;
+    top: 10px;
+    z-index: 1;
+}
+
+a.candy {
+    color: red;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: 100;
+    font-size: 1.5em;
+    display: inline;
+    padding: 8px;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: red;
+}
+
+h1 {
+    color: white;
+    font-size: 4em;
+    margin: 0px 0px 0px 40px;
+    font-weight: 100;
+    letter-spacing: 0px;
+    display: block;
+
+}
+
+.donuttext {
+    margin: 150px;
+}
+
+img.lolli {
+    width: 128px;
+    height: 128px;
+}
+
+h2 {
+    color: red;
+    font-weight: 100;
+    font-size: 2.5em;
+    margin-bottom: 0px;
+}
+
+img {
+
+    height: 950px;
+    width: 950px;
+}
+
+p {
+    line-height: 2em;
+}
+
+p.mil,
+.spr,
+.lol {
+    font-size: 20px;
+    width: 700px;
+    margin: 0 auto;
+    margin-bottom: 150px;
+}
+
+.milktext,
+.sprinklestext,
+.gumtext {
+    text-align: center;
+    flex: 1;
+
+}
+
+
+.intro,
+.milk,
+.gumball,
+.sprinkles {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding-bottom: 25px;
+    color: rgb(242, 159, 173);
+    font-weight: 100;
+    align-items: center;
+}
+
+
+
+img.donut {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -30px;
+    min-height: 900px;
+    right: 0%;
+}
+
+
+span {
+    color: red;
+}
+
+/* ===== БУРГЕР МЕНЮ ===== */
+
+/* Скрываем чекбокс */
+.burger-checkbox {
+    display: none;
+}
+
+/* Кнопка бургер - скрыта на десктопе */
+.burger {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.burger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Ссылки на десктопе - в ряд */
+.nav-links {
+    display: inline;
+}
+
+@media (max-width: 768px) {
+
+    /* Navbar на мобильном */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px 15px;
+        box-sizing: border-box;
+    }
+
+    /* Показываем бургер справа */
+    .burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Скрываем ссылки */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 15px;
+        width: auto;
+        background-color: transparent;
+        flex-direction: column;
+        text-align: right;
+        padding: 10px;
+    }
+
+    .nav-links a {
+        padding: 10px 0;
+        display: block;
+    }
+
+    /* Когда чекбокс checked - показываем меню */
+    .burger-checkbox:checked~.nav-links {
+        display: flex;
+    }
+
+    .donuttext {
+        display: none;
+        margin: 0 !important;
+    }
+
+    .intro {
+        gap: 0;
+        flex-direction: column;
+    }
+
+    .milk,
+    .gumball,
+    .sprinkles {
+        flex-direction: column;
+    }
+
+    .milktext,
+    .gumtext,
+    .sprinklestext {
+        width: 100%;
+        order: 2;
+    }
+
+    .milk>div:first-child,
+    .sprinkles>div:first-child,
+    .gumball>div:last-child {
+        width: 100%;
+        order: 1;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    img.donut {
+
+        width: 100%;
+        min-height: auto;
+        margin-top: -35px;
+    }
+
+    img.lolli {
+        display: none;
+    }
+
+    .milktext,
+    .gumtext,
+    .sprinklestext {
+        width: 40%;
+
+    }
+
+    p.mil,
+    .spr,
+    .lol {
+
+        width: 80%;
+        padding: 10px;
+        font-size: 1em;
+
+
+
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .intro,
+    .milk,
+    .gumball,
+    .sprinkles {
+        flex-direction: column;
+    }
+
+    .intro {
+        gap: 0;
+    }
+
+    .donuttext {
+        display: none;
+        margin: 0 !important;
+    }
+
+    img {
+
+        width: 100%;
+        height: auto;
+    }
+
+    img.donut {
+
+        width: 100%;
+        min-height: auto;
+        margin-top: -65px;
+    }
+
+    img.lolli {
+        display: none;
+    }
+
+    .milktext,
+    .gumtext,
+    .sprinklestext {
+        width: 80%;
+
+    }
+
+    p.mil,
+    .spr,
+    .lol {
+
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    .gumtext {
+        order: 0;
+    }
+
+    .milktext {
+        order: -1;
+    }
+
+    .sprinklestext {
+        order: -2;
+    }
+
+
+
+}
